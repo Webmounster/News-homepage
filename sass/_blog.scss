@@ -1,0 +1,19 @@
+@use 'mixin';
+@use 'variables';
+.blogs {
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+    @media #{variables.$desktop} {
+        height: 130px;
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .blog {
+        @include mixin.blog;
+    }
+}

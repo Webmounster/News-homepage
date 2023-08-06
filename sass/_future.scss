@@ -1,0 +1,60 @@
+@use 'mixin';
+@use 'variables';
+.future {
+    height: 306px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 65px;
+
+    @media #{variables.$desktop} {
+        flex-direction: row;
+        margin-bottom: 0;
+        height: 209px;
+        margin-bottom: 72px;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        margin-right: 40px;
+        font-weight: variables.$fw800;
+        text-overflow: ellipsis;
+
+        @media #{variables.$desktop} {
+            font-size: 3.5rem;
+            width: 381px;
+            margin-right: 0;
+        }
+    }
+    .future-pb {
+        display: flex;
+        flex-direction: column;
+        @media #{variables.$desktop} {
+            width: 351px;
+        }
+        .parrafo {
+            @include mixin.parrafo;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            width: 185px;
+            height: 47px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: variables.$SoftRed;
+            cursor: pointer;
+            &:hover {
+                background-color: variables.$VeryDarkBlue;
+            }
+            a {
+                text-transform: uppercase;
+                text-decoration: none;
+                color: variables.$Off-white;
+                font-weight: variables.$fw400;
+                letter-spacing: 0.2em;
+            }
+        }
+    }
+}

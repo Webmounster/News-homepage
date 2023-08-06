@@ -1,0 +1,93 @@
+@use 'variables';
+.header {
+    position: relative;
+    height: 87px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media #{variables.$desktop} {
+        width: 1111px;
+        height: 87px;
+        margin-bottom: 56px;
+    }
+    // z-index: 100;
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 100;
+        width: 70%;
+        height: 800px;
+        @media #{variables.$desktop} {
+            flex-direction: row;
+            height: 20px;
+            width: 400px;
+        }
+        .open-close {
+            width: 100%;
+            float: right;
+            &__img {
+                width: 100px;
+                height: 100px;
+                background-image: url('../assets/images/icon-menu.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                float: right;
+                cursor: pointer;
+            }
+
+            @media #{variables.$desktop} {
+                display: none;
+            }
+        }
+
+        .nav {
+            position: absolute;
+            top: 0px;
+            right: -15px;
+            width: 100%;
+            height: 600px;
+            display: none;
+            flex-direction: column;
+            background-color: white;
+            padding-top: 35px;
+
+            @media #{variables.$desktop} {
+                display: flex;
+                flex-direction: row;
+                background-color: transparent;
+                text-align: left;
+                right: 0;
+                position: relative;
+                height: 0;
+            }
+
+            .close {
+                text-align: end;
+                padding-right: 45px;
+                margin-bottom: 80px;
+                cursor: pointer;
+
+                @media #{variables.$desktop} {
+                    display: none;
+                }
+            }
+
+            .nav-link {
+                margin-bottom: 25px;
+                padding-left: 20px;
+                text-decoration: none;
+                color: variables.$VeryDarkBlue;
+                font-weight: variables.$fw400;
+
+                &:hover {
+                    color: variables.$SoftRed;
+                }
+            }
+        }
+    }
+}

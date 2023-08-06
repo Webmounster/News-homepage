@@ -1,0 +1,68 @@
+@use 'variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: variables.$Off-white;
+    font-family: variables.$ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media #{variables.$desktop} {
+        padding: 87px;
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        'header'
+        'section1'
+        'section2'
+        'section3'
+        'section4';
+    width: 343px;
+
+    @media #{variables.$desktop} {
+        width: 1111px;
+        height: 806px;
+        margin-bottom: 100px;
+        grid-template-areas:
+            'header header'
+            'section1 section3'
+            'section2 section3'
+            'section4 section4';
+    }
+}
+
+.blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: brightness(0.5);
+    display: none;
+}
+
+header {
+    grid-area: header;
+}
+
+section:nth-of-type(1) {
+    grid-area: section1;
+}
+section:nth-of-type(2) {
+    grid-area: section2;
+}
+section:nth-of-type(3) {
+    grid-area: section3;
+}
+section:nth-of-type(4) {
+    grid-area: section4;
+}

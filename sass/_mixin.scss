@@ -1,0 +1,45 @@
+@use 'variables';
+@mixin parrafo {
+    font-size: 15px;
+    color: variables.$DarkGrayishBlue;
+    font-weight: variables.$fw400;
+    line-height: 1.5rem;
+}
+
+@mixin blog() {
+    height: 130px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+
+    img {
+        width: 100px;
+        height: 130px;
+    }
+
+    .blog-data {
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h2 {
+            font-size: 2rem;
+            color: variables.$GrayishBlue;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            font-weight: variables.$fw700;
+            cursor: pointer;
+            &:hover {
+                color: variables.$SoftRed;
+            }
+        }
+
+        p {
+            @include parrafo();
+        }
+    }
+}
